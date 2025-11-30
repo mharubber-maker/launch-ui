@@ -1,0 +1,26 @@
+{
+    "mcpFigma.aiAssistant": "claude-desktop",
+    "mcpFigma.autoStartWebSocket": true,
+    "azureMcp.serverMode": "all",
+    "azureMcp.enabledServices": [
+        "storage",
+        "appconfig",
+        "bestpractices",
+        "grafana",
+        "mysql",
+        "postgres",
+        "redis",
+        "marketplace",
+        "kusto",
+        "monitor",
+        "virtualdesktop",
+        "foundry",
+        "search",
+        "role",
+        "resourcehealth",
+        "servicebus",
+        "keyvault",
+        "documentation",
+        "extension"
+    ]
+}
