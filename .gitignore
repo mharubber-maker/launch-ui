@@ -38,3 +38,4 @@ next-env.d.ts
 # pro
 /app/pro/
 /components/pro/
+/lib/generated/prisma
