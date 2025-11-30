@@ -42,7 +42,7 @@ export default function RegisterPage() {
       } else {
         router.push("/auth/login?registered=true");
       }
-    } catch (error) {
+    } catch {
       setError("حدث خطأ أثناء إنشاء الحساب");
     } finally {
       setLoading(false);

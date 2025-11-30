@@ -1,14 +1,26 @@
+"use client";
+
 import { redirect } from "next/navigation";
-import { getServerSession } from "next-auth";
+import { signOut, useSession } from "next-auth/react";
 
-import { authOptions } from "@/lib/auth";
+export default function DashboardPage() {
+  const { data: session, status } = useSession();
 
-export default async function DashboardPage() {
-  const session = await getServerSession(authOptions);
+  if (status === "loading") {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <p className="text-muted-foreground">جاري التحميل...</p>
+      </div>
+    );
+  }
 
   if (!session) {
     redirect("/auth/login");
   }
+
+  const handleSignOut = () => {
+    signOut({ callbackUrl: "/auth/login" });
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -43,12 +55,12 @@ export default async function DashboardPage() {
             <div className="bg-background border border-border rounded-xl p-6">
               <h3 className="font-semibold text-foreground mb-2">إجراءات سريعة</h3>
               <div className="space-y-2">
-                <a
-                  href="/api/auth/signout"
+                <button
+                  onClick={handleSignOut}
                   className="block w-full text-center bg-destructive/10 text-destructive px-4 py-2 rounded-lg hover:bg-destructive/20 transition-colors"
                 >
                   تسجيل الخروج
-                </a>
+                </button>
               </div>
             </div>
           </div>

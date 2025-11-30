@@ -32,7 +32,7 @@ export default function LoginPage() {
         router.push("/dashboard");
         router.refresh();
       }
-    } catch (error) {
+    } catch {
       setError("حدث خطأ أثناء تسجيل الدخول");
     } finally {
       setLoading(false);
