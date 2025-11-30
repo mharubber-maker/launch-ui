@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -42,7 +42,7 @@ export default function RegisterPage() {
       } else {
         router.push("/auth/login?registered=true");
       }
-    } catch (error) {
+    } catch {
       setError("حدث خطأ أثناء إنشاء الحساب");
     } finally {
       setLoading(false);

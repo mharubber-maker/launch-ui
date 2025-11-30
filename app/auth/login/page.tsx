@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+import { useState } from "react";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -32,7 +32,7 @@ export default function LoginPage() {
         router.push("/dashboard");
         router.refresh();
       }
-    } catch (error) {
+    } catch {
       setError("حدث خطأ أثناء تسجيل الدخول");
     } finally {
       setLoading(false);
